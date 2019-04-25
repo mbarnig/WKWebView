@@ -59,7 +59,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate {
         NotificationCenter.default.post(name: Notification.Name(rawValue: notifyKeyOutput), object: self)    
     }  // end func
     
-    // the following function handles target="_blank" links by opening themmin thesame view
+    // the following function handles target="_blank" links by opening them in the same view
     func webView(_ myWebView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         outputText += "New Navigation.\n"
         if navigationAction.targetFrame == nil {
