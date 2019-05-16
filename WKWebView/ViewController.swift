@@ -22,7 +22,7 @@ class ViewController: NSViewController, feedBack {
     
 
     
-    func output() {
+    @objc func output() {
         myTextView.string = outputText
     }  // end func
 
