@@ -17,9 +17,9 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate {
     
     func output(item: AnyObject) {
         outputText += "ScrollView : " + String(describing: item.scrollView)
-        outputText += "Title : " + String(item.title)!      
+        outputText += "Title : " + item.title!
         // print("URL : " + String(item.url)!) // crash
-        outputText += "UserAgent : " + String(item.customUserAgent)!
+        outputText += "UserAgent : " + item.customUserAgent!
         outputText += "serverTrust : " + String(describing: item.serverTrust)
         NotificationCenter.default.post(name: Notification.Name(rawValue: notifyKeyOutput), object: self)
     }  // end func
@@ -76,7 +76,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate {
     
     func openSafari(link: URL) {
         let checkURL = link
-        if NSWorkspace.shared().open(checkURL as URL) {
+        if NSWorkspace.shared.open(checkURL as URL) {
             outputText += "URL Successfully Opened in Safari.\n"
         } else {
             outputText += "Invalid URL in Safari.\n"
